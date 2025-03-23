@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ebiznes01:
+    image: tomaszpakula/ebiznes01-docker:1
+    container_name: gradle-app-container
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app 
+    environment:
+      - GRADLE_OPTS=-Dorg.gradle.daemon=false
+    command: ["gradle", "run"]
+
