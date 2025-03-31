@@ -40,8 +40,7 @@ skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.co
 :black_large_square:  3.5 Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota)
 :black_large_square:  4.0 Zwróci listę kategorii na określone żądanie użytkownika
 :black_large_square: 4.5 Zwróci listę produktów wg żądanej kategorii
-:black_large_square:5.0 Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger,
-Webex
+:black_large_square:5.0 Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger, Webex
 
 **Zadanie 4** Go
 
