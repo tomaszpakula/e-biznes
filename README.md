@@ -37,15 +37,23 @@ skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.co
 **Zadanie 3** Kotlin
 
 :black_large_square: 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord
+
 :black_large_square:  3.5 Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota)
+
 :black_large_square:  4.0 Zwróci listę kategorii na określone żądanie użytkownika
+
 :black_large_square: 4.5 Zwróci listę produktów wg żądanej kategorii
+
 :black_large_square:5.0 Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger, Webex
 
 **Zadanie 4** Go
 
 :black_large_square: 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
+
 :black_large_square: 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
+
 :black_large_square: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint
+
 :black_large_square: 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
+
 :black_large_square: 5.0 pogrupować zapytania w gorm’owe scope'y
