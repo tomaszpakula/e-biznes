@@ -26,7 +26,7 @@ Zadania z przedmiotu e-biznes
 
 :white_check_mark: 4.5 wymaganie 4 [Link do commita 2](https://github.com/tomaszpakula/e-biznes/commit/c1b69220879ec359547e7d8192c4baf28bdaf86a)
 
-::white_check_mark: 5.0 wymaganie 5 [Link do commita 2](https://github.com/tomaszpakula/e-biznes/commit/c1b69220879ec359547e7d8192c4baf28bdaf86a)
+:white_check_mark: 5.0 wymaganie 5 [Link do commita 2](https://github.com/tomaszpakula/e-biznes/commit/c1b69220879ec359547e7d8192c4baf28bdaf86a)
 
 
 [Kod](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie2)
