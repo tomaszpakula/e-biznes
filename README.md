@@ -36,7 +36,7 @@ skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.co
 
 **Zadanie 3** Kotlin
 
-:black_large_square: 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord
+✅ 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord
 
 :black_large_square:  3.5 Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota)
 
