@@ -18,8 +18,10 @@ val dotenv = Dotenv.load()
 
 val BOT_TOKEN: String = dotenv["BOT_TOKEN"] ?: error("BOT_TOKEN not found in .env")
 val USER_ID: String = dotenv["USER_ID"] ?: error("USER_ID not found in .env")
+val BOT_ID: String = dotenv["USER_ID"] ?: error("USER_ID not found in .env")
 const val url = "https://discord.com/api/v10/"
 
+val categories = arrayOf("Technologia", "Produkty spożywcze", "Dom i ogród")
 
 @Serializable
 data class CreateDMRequest(val recipient_id: String)
@@ -52,16 +54,16 @@ val client = HttpClient(CIO)
 var lastReadMessageId : String ? = null
 var channelId: String ? = null
 
-suspend fun readMessages(){
+suspend fun readMessages(): DiscordMessage? {
     if(channelId == null){
-        return
+        return null
     }
     val url = buildString {
         append("https://discord.com/api/v10/channels/$channelId/messages?")
         if (lastReadMessageId != null) {
             append("after=$lastReadMessageId&")
         }
-        append("limit=10")
+        append("limit=1")
     }
 
 
@@ -72,16 +74,23 @@ suspend fun readMessages(){
         }
     }
 
+    if(response.status != HttpStatusCode.OK) {
+        println(response.status)
+    }
+
     val responseBody = response.bodyAsText()
     val messages: List<DiscordMessage> = json.decodeFromString(responseBody)
-
-    if (messages.isNotEmpty()) {
+    if (messages.isNotEmpty() ) {
         lastReadMessageId = messages.first().id
+        if(messages[0].author.id != USER_ID){
+            return null
+        }
+    }
+    else {
+        return null
     }
 
-    for (message in messages) {
-        println("${message.author.username}: ${message.content}")
-    }
+    return messages[0]
 }
 
 suspend fun sendMessage(message: MessageRequest){
@@ -96,7 +105,6 @@ suspend fun sendMessage(message: MessageRequest){
         setBody(Json.encodeToString(message))
     }
 
-    println(sendMessageResponse.bodyAsText())
 }
 
 suspend fun createChannel(userId: String) {
@@ -110,6 +118,19 @@ suspend fun createChannel(userId: String) {
     }.body()
     )
     channelId = response.channelId
+    //Wczytaj poprzednią najnowszą wiadomość, aby nie brać jej już pod uwagę
+    readMessages()
+
+}
+
+suspend fun getCategories():MessageRequest{
+    val message = buildString {
+        append("O to lista kategorii: \n")
+        categories.forEach {
+            category -> append("$category\n" )
+        }
+    }
+    return MessageRequest(content=message)
 }
 
 suspend fun main() {
@@ -121,12 +142,13 @@ suspend fun main() {
         while (true) {
             delay(1000)
             if(channelId != null){
-                readMessages()
-            }
-
-            val message = readLine()
-            if (!message.isNullOrEmpty()) {
-                sendMessage(MessageRequest(message.trim()))
+                val message: DiscordMessage? = readMessages()
+                if (message != null) {
+                    when (message.content) {
+                        "/categories" -> sendMessage(getCategories())
+                        else -> sendMessage(MessageRequest("Nieprawidłowe polecenie. Upewnij się, że użyłeś jednej z poniższych komend: \n/categories - lista kategorii"))
+                    }
+                }
             }
         }
     }
