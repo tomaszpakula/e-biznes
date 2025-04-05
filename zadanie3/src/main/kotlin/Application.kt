@@ -12,16 +12,15 @@ import kotlinx.serialization.json.Json
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.SerialName
-import io.github.cdimascio.dotenv.dotenv
 
 val dotenv = Dotenv.load()
 
 val BOT_TOKEN: String = dotenv["BOT_TOKEN"] ?: error("BOT_TOKEN not found in .env")
 val USER_ID: String = dotenv["USER_ID"] ?: error("USER_ID not found in .env")
-val BOT_ID: String = dotenv["USER_ID"] ?: error("USER_ID not found in .env")
 const val url = "https://discord.com/api/v10/"
 
-val categories = arrayOf("Technologia", "Produkty spożywcze", "Dom i ogród")
+val products = mapOf("Telefon" to "Technologia", "Komputer" to "Technologia", "ser" to "Produkty Spożywcze" ,"mleko" to "Produkty Spożywcze" )
+val categories = products.values.distinct()
 
 @Serializable
 data class CreateDMRequest(val recipient_id: String)
@@ -105,25 +104,36 @@ suspend fun sendMessage(message: MessageRequest){
         setBody(Json.encodeToString(message))
     }
 
+    if(sendMessageResponse.status != HttpStatusCode.OK) {
+        println(sendMessageResponse.status)
+    }
+
 }
 
 suspend fun createChannel(userId: String) {
-    val response: DMChannelResponse = json.decodeFromString(client.post("$url/users/@me/channels"){
+    val response: HttpResponse = client.post("$url/users/@me/channels"){
         headers {
             append(HttpHeaders.Authorization, "Bot $BOT_TOKEN")
             append(HttpHeaders.ContentType, ContentType.Application.Json.toString())
             append(HttpHeaders.UserAgent, "DiscordBot (https://discord.com, v10)")
         }
         setBody(Json.encodeToString(CreateDMRequest(recipient_id = userId)))
-    }.body()
-    )
-    channelId = response.channelId
+    }
+
+    if(response.status != HttpStatusCode.OK) {
+        println(response.bodyAsText())
+        return
+    }
+
+    val responseBody: DMChannelResponse = json.decodeFromString(response.body())
+
+    channelId = responseBody.channelId
     //Wczytaj poprzednią najnowszą wiadomość, aby nie brać jej już pod uwagę
     readMessages()
 
 }
 
-suspend fun getCategories():MessageRequest{
+fun getCategories():MessageRequest{
     val message = buildString {
         append("O to lista kategorii: \n")
         categories.forEach {
@@ -133,11 +143,37 @@ suspend fun getCategories():MessageRequest{
     return MessageRequest(content=message)
 }
 
+fun getProductsByCategory(category: String):MessageRequest{
+    val filteredProducts = products.filter {
+            product -> product.value == category
+    }
+    val message = buildString {
+        append("O to lista produktów: \n")
+        filteredProducts.forEach {
+            product -> append("${product.key}\n")
+        }
+    }
+    return MessageRequest(content=message)
+}
+
+suspend fun handleProducts(message:DiscordMessage){
+    if(message.content.startsWith("/Kategorie:")) {
+        val category:String = message.content.removePrefix("/Kategorie:").trim()
+        if (categories.contains(category)) {
+            sendMessage(getProductsByCategory(category))
+        }
+        else{
+            sendMessage(MessageRequest("Podana kategoria nie istnieje"))
+            sendMessage(getCategories())
+        }
+    }
+    else{
+        sendMessage(MessageRequest("Nieprawidłowe polecenie. Upewnij się, że użyłeś jednej z poniższych komend: \n/Kategorie - lista kategorii\n/Kategorie:[nazwa kategorii] - produkty danej kategorii"))
+    }
+}
+
 suspend fun main() {
-
-
     createChannel(USER_ID)
-
     runBlocking {
         while (true) {
             delay(1000)
@@ -145,8 +181,8 @@ suspend fun main() {
                 val message: DiscordMessage? = readMessages()
                 if (message != null) {
                     when (message.content) {
-                        "/categories" -> sendMessage(getCategories())
-                        else -> sendMessage(MessageRequest("Nieprawidłowe polecenie. Upewnij się, że użyłeś jednej z poniższych komend: \n/categories - lista kategorii"))
+                        "/Kategorie" -> sendMessage(getCategories())
+                        else -> handleProducts(message)
                     }
                 }
             }
