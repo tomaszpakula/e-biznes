@@ -42,7 +42,7 @@ skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.co
 
 ✅  4.0 Zwróci listę kategorii na określone żądanie użytkownika
 
-:black_large_square: 4.5 Zwróci listę produktów wg żądanej kategorii
+✅ 4.5 Zwróci listę produktów wg żądanej kategorii
 
 :black_large_square:5.0 Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger, Webex
 
