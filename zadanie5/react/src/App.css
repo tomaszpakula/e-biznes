@@ -49,3 +49,38 @@ input {
   height: 3rem;
   padding: 1rem;
 }
+
+.cart {
+  font-size: 2rem;
+}
+
+.cart:hover {
+  color: maroon;
+  cursor: pointer;
+}
+
+#cart {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+  color: white;
+}
+
+#cart:hover {
+  color: maroon;
+}
+
+.cartItem {
+  border: 1px solid #999;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+#cartItems {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  padding: 1rem;
+}

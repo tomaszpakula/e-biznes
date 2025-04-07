@@ -36,15 +36,17 @@ skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.co
 
 **Zadanie 3** Kotlin
 
-✅ 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord
+✅ 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord [commit 1](https://github.com/tomaszpakula/e-biznes/commit/1d663e2fdde759d5687a63b63b5cd884aeba9c7b)
 
-✅  3.5 Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota)
+✅  3.5 Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota) [commit 1](https://github.com/tomaszpakula/e-biznes/commit/1d663e2fdde759d5687a63b63b5cd884aeba9c7b)
 
-✅  4.0 Zwróci listę kategorii na określone żądanie użytkownika
+✅  4.0 Zwróci listę kategorii na określone żądanie użytkownika [commit 2](https://github.com/tomaszpakula/e-biznes/commit/c4c6bfc3430f09684658f379b4e17c8cb6146de9)
 
-✅ 4.5 Zwróci listę produktów wg żądanej kategorii
+✅ 4.5 Zwróci listę produktów wg żądanej kategorii [commit 3](https://github.com/tomaszpakula/e-biznes/commit/2c16733b7e1eb8809376bea7dbaf1ee43bb90986)
 
-✅ 5.0 Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger, Webex
+✅ 5.0 Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger, Webex [commit 4](https://github.com/tomaszpakula/e-biznes/commit/6cdbfd0261c530de5cac3217604a4bda83e1bdb5)
+
+[katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie3)
 
 **Zadanie 4** Go
 
@@ -72,14 +74,16 @@ przesyłane za pomocą React hooks.
 ✅ 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz
 Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w
 Produktach powinniśmy pobierać dane o produktach z aplikacji
-serwerowej;
+serwerowej; [commit 1](https://github.com/tomaszpakula/e-biznes/commit/d74bbeaacebce0ec0e4e3c24677ec07d45f13d82)
 
-🔳 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
+🟩 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
 
-🔳 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za
+✅ 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za
 pomocą React hooks
 
 🔳 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz
 kliencką na dockerze via docker-compose
 
-🔳 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+✅ 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+
+[katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie5)

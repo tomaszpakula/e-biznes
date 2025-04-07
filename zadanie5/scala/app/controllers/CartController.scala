@@ -14,15 +14,28 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
         Ok(Json.toJson(cart))
     }
 
-    def addToCart = Action(parse.json){ request =>
-        request.body.validate[CartItem] match{
-            case JsSuccess(newCartItem, _) => {
-                cart = cart :+ newCartItem 
-                Created(Json.toJson(newCartItem))
-            }
-            case JsError(_) => BadRequest(Json.obj("error" -> "Bad request"))
-        }
-    }
+    def addToCart = Action(parse.json) { request =>
+    request.body.validate[CartItem] match {
+    case JsSuccess(newCartItem, _) =>
+      cart.find(_.productId == newCartItem.productId) match {
+        case Some(existingItem) =>
+          cart = cart.map {
+            case item if item.productId == existingItem.productId =>
+              item.copy(quantity = item.quantity + newCartItem.quantity)
+            case item => item
+          }
+          Ok(Json.toJson(existingItem)) 
+
+        case None =>
+          cart = cart :+ newCartItem
+          Created(Json.toJson(newCartItem)) 
+      }
+
+    case JsError(_) =>
+      BadRequest(Json.obj("error" -> "Bad request"))
+  }
+}
+
 
     def updateQuantity(productId: Int) = Action(parse.json){ request =>
         request.body.validate[Int] match{
@@ -44,7 +57,7 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
     def removeFromCart(productId: Int) = Action{
         cart.find(_.productId == productId) match {
             case Some(_) => {
-                cart.filterNot(_.productId == productId)
+                cart = cart.filterNot(_.productId == productId)
                 NoContent
             }
             case None => NotFound(Json.obj("error" -> "Not found"))

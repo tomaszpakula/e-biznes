@@ -1,36 +1,26 @@
-import React, { useState } from "react";
-import { use } from "react";
+import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 
+import axios from "axios";
+import Product from "./Product";
+import { ProductContext } from "./ProductContext";
+
 export default function Products() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:9000/products", {
-      method: "GET", // Określamy metodę (choć jest to domyślne w przypadku GET)
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error fetching products:", error));
-  }, []);
-
+  const { products } = useContext(ProductContext);
   return (
     <>
       <h1>Products</h1>
-      {products.map((product) => (
-        <div key={product.id}>
-          <h2>{product.name}</h2>
-          <p>${product.price}</p>
-        </div>
-      ))}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+        }}
+      >
+        {products.map((product) => (
+          <Product product={product} key={product.id} />
+        ))}
+      </div>
     </>
   );
 }
