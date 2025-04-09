@@ -50,15 +50,15 @@ skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.co
 
 **Zadanie 4** Go
 
-:black_large_square: 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
+✅ 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
 
-:black_large_square: 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
+✅ 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
 
-:black_large_square: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint
+✅ 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint
 
-:black_large_square: 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
+⬜ 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
 
-:black_large_square: 5.0 pogrupować zapytania w gorm’owe scope'y
+⬜  5.0 pogrupować zapytania w gorm’owe scope'y
 
 
 **Zadanie 5** Frontend
