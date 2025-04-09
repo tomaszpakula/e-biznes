@@ -1,14 +1,14 @@
 import React from "react";
 import axios from "axios";
 import "./App.css";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Payments() {
   const cardNumber = React.useRef(null);
   const cardHolder = React.useRef(null);
   const expirationDate = React.useRef(null);
   const cvv = React.useRef(null);
-  const [message, setMessage] = React.useState("");
-
+  const navigate = useNavigate();
   const sendPayment = () => {
     axios("http://localhost:9000/validate", {
       method: "POST",
@@ -23,12 +23,11 @@ export default function Payments() {
       },
     })
       .then((response) => {
-        setMessage("Payment successful!");
+        navigate("/message", { state: { message: "Payment successful!" } });
         return response;
       })
       .catch((error) => {
-        console.log("Błąd serwera:", error.response?.data);
-        setMessage(error.response?.data?.error || "Coś poszło nie tak.");
+        navigate("/message", { state: { message: "Something went wrong!" } });
       });
   };
 
@@ -80,7 +79,6 @@ export default function Payments() {
         />
         <button>Pay</button>
       </form>
-      {message}
     </div>
   );
 }

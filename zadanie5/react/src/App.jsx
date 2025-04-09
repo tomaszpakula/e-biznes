@@ -7,6 +7,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter, Link, Route, Router, Routes } from "react-router-dom";
 import Cart from "./Cart";
 import { ProductProvider } from "./ProductContext";
+import PaymentMessage from "./PaymentMessage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/payments" element={<Payments />} />
+          <Route path="/message" element={<PaymentMessage />} />
         </Routes>
       </BrowserRouter>
     </ProductProvider>

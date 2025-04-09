@@ -48,6 +48,9 @@ export default function Cart() {
       >
         Clear Cart
       </button>
+      <Link to="/payments">
+        <button>Pay</button>
+      </Link>
     </div>
   );
 }
