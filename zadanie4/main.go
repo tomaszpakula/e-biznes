@@ -20,10 +20,11 @@ func main() {
 	}
 
 	e := echo.New()
-	db.AutoMigrate(&models.Product{})
+	db.AutoMigrate(&models.Product{}, &models.Category{}, &models.Cart{})
 
 	productController := &controllers.ProductController{DB: db}
 	cartController := &controllers.CartController{DB: db}
+	categoryController := &controllers.CategoryController{DB: db}
 
 	e.POST("/products", productController.CreateProduct)
 	e.GET("/products", productController.GetProducts)
@@ -34,6 +35,12 @@ func main() {
 	e.POST("/cart", cartController.AddToCart)
 	e.GET("/cart", cartController.GetAllProducts)
 	e.DELETE("/cart/:id", cartController.RemoveProduct)
+
+	e.POST("/categories", categoryController.CreateCategory)
+	e.GET("/categories", categoryController.GetCategories)
+	e.PUT("/categories/:id", categoryController.UpdateCategory)
+	e.DELETE("/categories/:id", categoryController.DeleteCategory)
+
 	e.Logger.Fatal(e.Start(":8080"))
 
 }

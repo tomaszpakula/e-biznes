@@ -16,15 +16,22 @@ func (p *ProductController) CreateProduct(c echo.Context) error {
 	if err := c.Bind(&product); err != nil {
 		return err
 	}
-	if result := p.DB.Create(&product); result.Error != nil {
-		return result.Error
+	var category models.Category
+	if err := p.DB.First(&category, product.CategoryID).Error; err != nil {
+		return c.JSON(http.StatusBadRequest, echo.Map{"message": "Category not found"})
+	}
+	if err := p.DB.Create(&product).Error; err != nil {
+		return err
+	}
+	if err := p.DB.Preload("Category").First(&product, product.ID).Error; err != nil {
+		return err
 	}
 	return c.JSON(http.StatusCreated, product)
 }
 
 func (p *ProductController) GetProducts(c echo.Context) error {
 	var products []models.Product
-	result := p.DB.Find(&products)
+	result := p.DB.Preload("Category").Find(&products)
 	if result.Error != nil {
 		return result.Error
 	}
