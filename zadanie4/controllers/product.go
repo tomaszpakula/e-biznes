@@ -4,6 +4,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
 	"net/http"
+	"strconv"
 	"zadanie4/models"
 )
 
@@ -30,8 +31,28 @@ func (p *ProductController) CreateProduct(c echo.Context) error {
 }
 
 func (p *ProductController) GetProducts(c echo.Context) error {
+	sort := c.QueryParam("sort")
+	column := c.QueryParam("column")
+	id := c.QueryParam("id")
+
+	if sort != "" && column == "" {
+		column = "price"
+	}
+
 	var products []models.Product
-	result := p.DB.Preload("Category").Find(&products)
+	result := p.DB.Model(&models.Product{}).Preload("Category")
+
+	if sort != "" {
+		result = result.Scopes(models.SortByColumn(sort, column))
+	}
+
+	if id, err := strconv.Atoi(id); err == nil {
+		result = result.Scopes(models.FilterByCategory(id))
+	}
+
+	if err := result.Find(&products).Error; err != nil {
+		return err
+	}
 	if result.Error != nil {
 		return result.Error
 	}

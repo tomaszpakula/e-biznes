@@ -58,7 +58,7 @@ skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.co
 
 ✅ 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
 
-⬜  5.0 pogrupować zapytania w gorm’owe scope'y
+✅  5.0 pogrupować zapytania w gorm’owe scope'y
 
 
 **Zadanie 5** Frontend

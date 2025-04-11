@@ -4,6 +4,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
 	"net/http"
+	"strconv"
 	"zadanie4/models"
 )
 
@@ -32,9 +33,19 @@ func (cc *CartController) AddToCart(c echo.Context) error {
 
 func (cc *CartController) GetAllProducts(c echo.Context) error {
 	var cartProducts []models.Cart
+	relation := c.QueryParam("relation")
+	quantity := c.QueryParam("quantity")
 
-	if err := cc.DB.Find(&cartProducts).Error; err != nil {
-		return c.JSON(http.StatusInternalServerError, echo.Map{"message": "Failed to retrieve products"})
+	results := cc.DB.Model(&models.Cart{})
+
+	if quantity, err := strconv.Atoi(quantity); err == nil {
+		results = results.Scopes(models.FilterByQuantity(relation, quantity))
+	}
+
+	results = results.Find(&cartProducts)
+
+	if results.Error != nil {
+		return c.JSON(http.StatusInternalServerError, echo.Map{"message": "Failed to get all products"})
 	}
 
 	return c.JSON(http.StatusOK, cartProducts)

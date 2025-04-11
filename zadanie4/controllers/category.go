@@ -24,7 +24,14 @@ func (cc *CategoryController) CreateCategory(c echo.Context) error {
 
 func (cc *CategoryController) GetCategories(c echo.Context) error {
 	var categories []models.Category
-	cc.DB.Find(&categories)
+	result := cc.DB.Model(&models.Category{})
+	sort := c.QueryParam("sort")
+
+	if sort != "" {
+		result = result.Scopes(models.SortByCategory(sort))
+	}
+
+	result = result.Find(&categories)
 	return c.JSON(http.StatusOK, categories)
 }
 
@@ -39,7 +46,7 @@ func (cc *CategoryController) UpdateCategory(c echo.Context) error {
 	if err := c.Bind(&category); err != nil {
 		return err
 	}
-	
+
 	cc.DB.Save(&category)
 	return c.JSON(http.StatusOK, category)
 }
