@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  react:
+    container_name: react_container
+    build:
+      context: ./react
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+ 
+
+  scala:
+    container_name: scala_container
+    build:
+      context: ./scala
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./scala:/app
+    environment:
+      - SCALA_ENV=development
+    restart: on-failure

@@ -1,29 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
-import { ProductContext } from "./ProductContext";
+import useCarts from "./useCarts";
 
 export default function Product({ product }) {
   const [quantity, setQuantity] = useState(0);
-  const { setCartChange } = useContext(ProductContext);
-  const addToCart = (productId) => {
-    axios("http://localhost:9000/cart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: {
-        productId: productId,
-        quantity: quantity,
-      },
-    }).then((response) => {
-      setCartChange((prev) => !prev);
-      return response;
-    });
-  };
+  const { addToCart } = useCarts();
+
   return (
     <div
+      data-testid="product"
       style={{
         border: "1px solid #555",
         borderRadius: "0.6rem",
@@ -40,6 +26,7 @@ export default function Product({ product }) {
         }}
       >
         <button
+          data-testid="decrease"
           disabled={quantity === 0}
           onClick={() => {
             setQuantity((prev) => prev - 1);
@@ -48,6 +35,7 @@ export default function Product({ product }) {
           -
         </button>
         <div
+          data-testid="quantity"
           style={{
             maxWidth: "50%",
             display: "flex",
@@ -61,6 +49,7 @@ export default function Product({ product }) {
           {quantity}
         </div>
         <button
+          data-testid="increase"
           onClick={() => {
             setQuantity((prev) => prev + 1);
           }}
@@ -68,10 +57,11 @@ export default function Product({ product }) {
           +
         </button>
         <FontAwesomeIcon
+          data-testid="add-to-cart"
           icon={faCartShopping}
           className="cart"
           onClick={() => {
-            addToCart(product.id);
+            addToCart(product.id, quantity);
             setQuantity(0);
           }}
         />
