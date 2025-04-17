@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./App.css";
-import { ProductContext } from "./ProductContext";
 import useCarts from "./useCarts";
 
 export default function CartItem({ name, item }) {
-  const { setItems } = useContext(ProductContext);
   const { removeItem } = useCarts();
   return (
     <div className="cartItem" data-testid="cart-item">

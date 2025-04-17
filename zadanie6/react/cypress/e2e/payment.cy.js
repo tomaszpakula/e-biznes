@@ -125,7 +125,7 @@ describe("Payment tests", () => {
     cy.get('[data-testid="cart-icon"]').click();
     cy.get('[data-testid="product"]').should("not.exist"); //50
   });
-  it("20. If we go to the /message without pay don't pay ", () => {
+  it.only("20. If we go to the /message without pay don't pay ", () => {
     cy.visit("http://localhost:5173/message");
     cy.get('[data-testid="payment-message"]').should(
       "have.text",
