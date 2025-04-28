@@ -1,0 +1,39 @@
+{
+    "auth": {
+        "username": "tomaszpakula_tjIBsr",
+        "access_key": "5GPJXsX2656xYhSgVP5p"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        },
+        {
+            "browser": "edge",
+            "os": "Windows 10",
+            "versions": [
+                "latest",
+                "latest-1"
+            ]
+        }
+    ],
+    "run_settings": {
+        "cypress_config_file": "cypress.config.js",
+        "project_name": "shop website test",
+        "build_name": "new build",
+        "exclude": [],
+        "parallels": "2",
+        "spec_timeout": 2
+    },
+    "connection_settings": {
+        "local": false,
+        "local_identifier": null,
+        "local_mode": null,
+        "local_config_file": null
+    },
+    "disable_usage_reporting": false
+}
