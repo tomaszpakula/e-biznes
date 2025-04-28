@@ -1,0 +1,6 @@
+[submodule "zadanie7/server"]
+	path = zadanie7/server
+	url = https://github.com/tomaszpakula/e-biznes-server.git
+[submodule "zadanie7/client"]
+	path = zadanie7/client
+	url = https://github.com/tomaszpakula/e-biznes-client.git
