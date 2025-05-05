@@ -2,15 +2,17 @@ package models
 
 import (
 	"fmt"
-	"gorm.io/gorm"
 	"strings"
+
+	"gorm.io/gorm"
 )
 
 type Product struct {
 	gorm.Model
+	ID         uint     `gorm:"primaryKey" json:"id"`
 	Name       string   `json:"name"`
 	Price      float64  `json:"price"`
-	CategoryID uint     `json:"category_id"`
+	CategoryID uint     `json:"categoryId"`
 	Category   Category `json:"category"`
 }
 
