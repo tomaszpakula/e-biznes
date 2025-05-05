@@ -4,35 +4,36 @@ Zadania z przedmiotu e-biznes
 
 **Zadanie 1** Docker
 
-:white_check_mark: 3.0 obraz ubuntu z Pythonem w wersji 3.10 [Link do commita 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
+✅ 3.0 obraz ubuntu z Pythonem w wersji 3.10 [commit 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
 
-:white_check_mark: 3.5 obraz ubuntu:24.02 z Javą w wersji 8 oraz Kotlinem [Link do commita 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
+✅ 3.5 obraz ubuntu:24.02 z Javą w wersji 8 oraz Kotlinem [commit 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
 
-:white_check_mark: 4.0 do powyższego należy dodać najnowszego Gradle’a oraz paczkę JDBC
-SQLite w ramach projektu na Gradle (build.gradle) [Link do commita 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
+✅ 4.0 do powyższego należy dodać najnowszego Gradle’a oraz paczkę JDBC
+SQLite w ramach projektu na Gradle (build.gradle) [commit 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
 
-:white_check_mark: 4.5 stworzyć przykład typu HelloWorld oraz uruchomienie aplikacji
-przez CMD oraz gradle [Link do commita 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
+✅ 4.5 stworzyć przykład typu HelloWorld oraz uruchomienie aplikacji
+przez CMD oraz gradle [commit 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
 
-:white_check_mark: 5.0 dodać konfigurację docker-compose [Link do commita 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
+✅ 5.0 dodać konfigurację docker-compose [commit 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
 
-[Kod](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie1)
+[Katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie1)
 
 **Zadanie 2** Scala
 
-:white_check_mark: 3.0  Należy stworzyć kontroler do Produktów [Link do commita 1](https://github.com/tomaszpakula/e-biznes/commit/f68969f3d6a1dee978a7fb37545ff8f81d531df2)
+✅ 3.0  Należy stworzyć kontroler do Produktów [commit 1](https://github.com/tomaszpakula/e-biznes/commit/f68969f3d6a1dee978a7fb37545ff8f81d531df2)
 
-:white_check_mark: 3.5 Do kontrolera należy stworzyć endpointy zgodnie z CRUD - dane
-pobierane z listy [Link do commita 1](https://github.com/tomaszpakula/e-biznes/commit/f68969f3d6a1dee978a7fb37545ff8f81d531df2)
+✅ 3.5 Do kontrolera należy stworzyć endpointy zgodnie z CRUD - dane
+pobierane z listy [commit 1](https://github.com/tomaszpakula/e-biznes/commit/f68969f3d6a1dee978a7fb37545ff8f81d531df2)
 
-:white_check_mark: 4.0 Należy stworzyć kontrolery do Kategorii oraz Koszyka + endpointy
-zgodnie z CRUD [Link do commita 1](https://github.com/tomaszpakula/e-biznes/commit/f68969f3d6a1dee978a7fb37545ff8f81d531df2)
+✅ 4.0 Należy stworzyć kontrolery do Kategorii oraz Koszyka + endpointy
+zgodnie z CRUD [commit 1](https://github.com/tomaszpakula/e-biznes/commit/f68969f3d6a1dee978a7fb37545ff8f81d531df2)
 
-:white_check_mark: 4.5 Należy aplikację uruchomić na dockerze (stworzyć obraz) oraz dodać
-skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.com/tomaszpakula/e-biznes/commit/c1b69220879ec359547e7d8192c4baf28bdaf86a)
+✅ 4.5 Należy aplikację uruchomić na dockerze (stworzyć obraz) oraz dodać
+skrypt uruchamiający aplikację via ngrok [commit 2](https://github.com/tomaszpakula/e-biznes/commit/c1b69220879ec359547e7d8192c4baf28bdaf86a)
 
-:white_check_mark: 5.0 Należy dodać konfigurację CORS dla dwóch hostów dla metod CRUD [Link do commita 2](https://github.com/tomaszpakula/e-biznes/commit/c1b69220879ec359547e7d8192c4baf28bdaf86a)
-[Kod](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie2)
+✅ 5.0 Należy dodać konfigurację CORS dla dwóch hostów dla metod CRUD [commit 2](https://github.com/tomaszpakula/e-biznes/commit/c1b69220879ec359547e7d8192c4baf28bdaf86a)
+
+[Katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie2)
 
 **Zadanie 3** Kotlin
 
@@ -50,15 +51,17 @@ skrypt uruchamiający aplikację via ngrok [Link do commita 2](https://github.co
 
 **Zadanie 4** Go
 
-✅ 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
+✅ 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD 
 
-✅ 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
+✅ 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy) [commit](https://github.com/tomaszpakula/e-biznes/commit/2d66f84fa1c4cc304bdb0c925410caf8664740b8)
 
-✅ 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint
+✅ 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint [commit](https://github.com/tomaszpakula/e-biznes/commit/34d4402b1e2cdfff24eaa863aa9c27deb9011746)
 
-✅ 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
+✅ 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem [commit](https://github.com/tomaszpakula/e-biznes/commit/2cb36be657b889fb1484a0551f3e85b5cbdb82ad)
 
-✅  5.0 pogrupować zapytania w gorm’owe scope'y
+✅  5.0 pogrupować zapytania w gorm’owe scope'y [commit](https://github.com/tomaszpakula/e-biznes/commit/2037e2871b8f388de51f71c23add41239e428e38)
+
+[katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie4)
 
 
 **Zadanie 5** Frontend
@@ -74,16 +77,94 @@ przesyłane za pomocą React hooks.
 ✅ 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz
 Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w
 Produktach powinniśmy pobierać dane o produktach z aplikacji
-serwerowej; [commit 1](https://github.com/tomaszpakula/e-biznes/commit/d74bbeaacebce0ec0e4e3c24677ec07d45f13d82)
+serwerowej; [commit](https://github.com/tomaszpakula/e-biznes/commit/d74bbeaacebce0ec0e4e3c24677ec07d45f13d82)
 
-🟩 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
+🟩 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing [commit](https://github.com/tomaszpakula/e-biznes/commit/a0a2f4742d7de75eee6125ec6aac51701ae11c47)
 
 ✅ 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za
-pomocą React hooks
+pomocą React hooks [commit](https://github.com/tomaszpakula/e-biznes/commit/a0a2f4742d7de75eee6125ec6aac51701ae11c47)
 
-🔳 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz
-kliencką na dockerze via docker-compose
+✅ 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz
+kliencką na dockerze via docker-compose [commit](https://github.com/tomaszpakula/e-biznes/commit/92723ac26fe01d23d0b628530ea7355dc24e7c5c)
 
-✅ 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+✅ 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS [commit](https://github.com/tomaszpakula/e-biznes/commit/92723ac26fe01d23d0b628530ea7355dc24e7c5c)
 
 [katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie5)
+
+**Zadanie 6** Testy
+
+Należy stworzyć 20 przypadków testowych w jednym z rozwiązań:
+
+- Cypress JS (JS)
+- Selenium (Kotlin, Python, Java, JS, Go, Scala)
+
+Testy mają w sumie zawierać minimum 50 asercji (3.5). Mają również
+uruchamiać się na platformie Browserstack (5.0). Proszę pamiętać o
+stworzeniu darmowego konta via https://education.github.com/pack.
+
+✅ 3.0 Należy stworzyć 20 przypadków testowych w CypressJS lub Selenium
+(Kotlin, Python, Java, JS, Go, Scala) [commit](https://github.com/tomaszpakula/e-biznes/commit/e8d564106b1e62a84e3328b0368829f62a08b321)
+
+✅ 3.5 Należy rozszerzyć testy funkcjonalne, aby zawierały minimum 50 asercji [commit](https://github.com/tomaszpakula/e-biznes/commit/e8d564106b1e62a84e3328b0368829f62a08b321)
+
+🔲 4.0 Należy stworzyć testy jednostkowe do wybranego wcześniejszego
+projektu z minimum 50 asercjami
+
+✅ 4.5 Należy dodać testy API, należy pokryć wszystkie endpointy z
+minimum jednym scenariuszem negatywnym per endpoint [commit](https://github.com/tomaszpakula/e-biznes/commit/1ed5726daba17ab0dc79e96ed615e407b8b8c246)
+
+🔲 5.0 Należy uruchomić testy funkcjonalne na Browserstacku
+
+[katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie6)
+
+**Zadanie 7** Sonar
+
+Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden
+branch, dwa repozytoria) do Sonara w wersji chmurowej
+(https://sonarcloud.io/). Należy poprawić aplikacje uzyskując 0 bugów,
+0 zapaszków, 0 podatności, 0 błędów bezpieczeństwa. Dodatkowo należy
+dodać widżety sonarowe do README w repozytorium dane projektu z
+wynikami.
+
+✅ 3.0 Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w
+hookach gita
+
+✅ 3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod
+aplikacji serwerowej)
+
+✅ 4.0 Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod
+aplikacji serwerowej)
+
+✅ 4.5 Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa
+w kodzie w Sonarze (kod aplikacji serwerowej) [commit](https://github.com/tomaszpakula/e-biznes-server/commit/3e54668c3e1217bcce4b9cd2756ecd4a64b29007)
+
+✅ 5.0 Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie
+aplikacji klienckiej [commit](https://github.com/tomaszpakula/e-biznes-client/commit/a52f9fdabad4e0d3b4a5de0794c38021189ba7c1)
+
+[katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie7)
+
+
+
+**Zadanie 8** Oauth2
+
+Należy skonfigurować klienta Oauth2 (4.0). Dane o użytkowniku wraz z
+tokenem powinny być przechowywane po stronie bazy serwera, a nowy
+token (inny niż ten od dostawcy) powinien zostać wysłany do klienta
+(React). Można zastosować mechanizm sesji lub inny dowolny (5.0).
+Zabronione jest tworzenie klientów bezpośrednio po stronie React'a
+wyłączając z komunikacji aplikację serwerową, np. wykorzystując auth0.
+
+Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return
+uri)-react.
+
+🔲 3.0 logowanie przez aplikację serwerową (bez Oauth2)
+
+🔲 3.5 rejestracja przez aplikację serwerową (bez Oauth2)
+
+🔲 4.0 logowanie via Google OAuth2
+
+🔲 4.5 logowanie via Facebook lub Github OAuth2
+
+🔲 5.0 zapisywanie danych logowania OAuth2 po stronie serwera
+
+[katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie8)
