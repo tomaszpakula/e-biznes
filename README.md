@@ -2,7 +2,7 @@
 
 Zadania z przedmiotu e-biznes
 
-**Zadanie 1** Docker
+## **Zadanie 1** Docker
 
 ✅ 3.0 obraz ubuntu z Pythonem w wersji 3.10 [commit 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
 
@@ -18,7 +18,7 @@ przez CMD oraz gradle [commit 1](https://github.com/tomaszpakula/e-biznes/commit
 
 [Katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie1)
 
-**Zadanie 2** Scala
+## **Zadanie 2** Scala
 
 ✅ 3.0  Należy stworzyć kontroler do Produktów [commit 1](https://github.com/tomaszpakula/e-biznes/commit/f68969f3d6a1dee978a7fb37545ff8f81d531df2)
 
@@ -35,7 +35,7 @@ skrypt uruchamiający aplikację via ngrok [commit 2](https://github.com/tomaszp
 
 [Katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie2)
 
-**Zadanie 3** Kotlin
+## **Zadanie 3** Kotlin
 
 ✅ 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord [commit 1](https://github.com/tomaszpakula/e-biznes/commit/1d663e2fdde759d5687a63b63b5cd884aeba9c7b)
 
@@ -49,7 +49,7 @@ skrypt uruchamiający aplikację via ngrok [commit 2](https://github.com/tomaszp
 
 [katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie3)
 
-**Zadanie 4** Go
+## **Zadanie 4** Go
 
 ✅ 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD 
 
@@ -64,7 +64,7 @@ skrypt uruchamiający aplikację via ngrok [commit 2](https://github.com/tomaszp
 [katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie4)
 
 
-**Zadanie 5** Frontend
+## **Zadanie 5** Frontend
 
 Należy stworzyć aplikację kliencką wykorzystując bibliotekę React.js.
 W ramach projektu należy stworzyć trzy komponenty: Produkty, Koszyk
@@ -91,7 +91,7 @@ kliencką na dockerze via docker-compose [commit](https://github.com/tomaszpakul
 
 [katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie5)
 
-**Zadanie 6** Testy
+## **Zadanie 6** Testy
 
 Należy stworzyć 20 przypadków testowych w jednym z rozwiązań:
 
@@ -117,7 +117,7 @@ minimum jednym scenariuszem negatywnym per endpoint [commit](https://github.com/
 
 [katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie6)
 
-**Zadanie 7** Sonar
+## **Zadanie 7** Sonar
 
 Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden
 branch, dwa repozytoria) do Sonara w wersji chmurowej
@@ -145,7 +145,7 @@ aplikacji klienckiej [commit](https://github.com/tomaszpakula/e-biznes-client/co
 
 
 
-**Zadanie 8** Oauth2
+## **Zadanie 8** Oauth2
 
 Należy skonfigurować klienta Oauth2 (4.0). Dane o użytkowniku wraz z
 tokenem powinny być przechowywane po stronie bazy serwera, a nowy
