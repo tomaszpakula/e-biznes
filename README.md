@@ -157,9 +157,9 @@ wyłączając z komunikacji aplikację serwerową, np. wykorzystując auth0.
 Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return
 uri)-react.
 
-🔲 3.0 logowanie przez aplikację serwerową (bez Oauth2)
+✅ 3.0 logowanie przez aplikację serwerową (bez Oauth2)
 
-🔲 3.5 rejestracja przez aplikację serwerową (bez Oauth2)
+✅ 3.5 rejestracja przez aplikację serwerową (bez Oauth2)
 
 🔲 4.0 logowanie via Google OAuth2
 
