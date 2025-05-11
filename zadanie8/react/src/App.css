@@ -78,3 +78,43 @@ input {
   font-size: 1.2rem;
   color: rgb(170, 82, 82);
 }
+
+.form-wrapper > form {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper > form > * {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid white;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.form-wrapper > form > button {
+  width: 50%;
+  margin: 1.5rem auto;
+}
+
+.form-wrapper > form > p{
+  border: none;
+  color: rgb(235, 137, 137);
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 550px) {
+  .form-wrapper > form {
+    width: 60%;
+  }
+}
+
+@media (min-width:1000px) {
+  .form-wrapper > form {
+    width: 30%;
+  }
+}

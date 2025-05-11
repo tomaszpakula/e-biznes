@@ -1,12 +1,13 @@
 package main
 
 import (
+	"zadanie4/controllers"
+	"zadanie4/middlewares"
+	"zadanie4/models"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	"zadanie4/controllers"
-	"zadanie4/models"
-	"github.com/labstack/echo/v4/middleware"
 )
 
 type App struct {
@@ -21,13 +22,22 @@ func main() {
 	}
 
 	e := echo.New()
-	db.AutoMigrate(&models.Product{}, &models.Category{}, &models.Cart{})
+	/*e.Use(middleware.Logger())
+	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "${method} ${uri} -> ${status} | token=${header:Authorization}\n",
+	}))*/
+
+	db.AutoMigrate(&models.Product{}, &models.Category{}, &models.Cart{}, &models.User{})
 
 	productController := &controllers.ProductController{DB: db}
 	cartController := &controllers.CartController{DB: db}
 	categoryController := &controllers.CategoryController{DB: db}
 	paymentController := &controllers.PaymentController{}
+	authController := &controllers.AuthController{DB: db}
 
+	e.GET("/me", authController.GetMe, middlewares.Verify )
+	e.POST("/login", authController.Login)
+	e.POST("/register", authController.Register)
 	e.POST("/products", productController.CreateProduct)
 	e.GET("/products", productController.GetProducts)
 	e.GET("/products/:id", productController.GetProduct)
@@ -47,10 +57,10 @@ func main() {
 
 	e.POST("/validate", paymentController.Validate)
 
-
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{echo.GET, echo.POST, echo.PUT, echo.DELETE, echo.OPTIONS},
+		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
 	}))
 
 	e.Logger.Fatal(e.Start(":9000"))
