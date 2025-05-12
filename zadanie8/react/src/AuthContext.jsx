@@ -37,8 +37,12 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const googleLogin = () => {
+    window.location.href="http://localhost:9000/auth/google/login";
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout, googleLogin}}>
       {children}
     </AuthContext.Provider>
   );

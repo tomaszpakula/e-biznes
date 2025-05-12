@@ -2,14 +2,14 @@ import { useForm } from "react-hook-form";
 import React, { useState } from "react";
 import useAuth from "./useAuth";
 import { useAuthContext } from "./AuthContext";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 export default function SignIn() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
 
   const { logInUser, loading, error, success } = useAuth();
 
@@ -18,11 +18,13 @@ export default function SignIn() {
     logInUser({ email, password });
   };
 
+  const { googleLogin } = useAuthContext();
+
   return (
     <div
       className="form-wrapper"
       style={{
-        height: "100vh",
+        minHeight: "100vh",
       }}
     >
       <h1>Sign in</h1>
@@ -37,16 +39,29 @@ export default function SignIn() {
           placeholder="password"
           {...register("password", { required: "Password is required" })}
         />
-       
+
         {errors.email && <p>{errors.email.message}</p>}
-        {!errors.email && errors.password && (
-          <p>{errors.password.message}</p>
+        {!errors.email && errors.password && <p>{errors.password.message}</p>}
+
+        {loading && <p style={{ color: "orange" }}>Wait...</p>}
+        {error ? (
+          <p>{error}</p>
+        ) : success ? (
+          <p style={{ color: "green" }}>Success!</p>
+        ) : (
+          ""
         )}
-  
-        {loading && <p style={{color: "orange"}}>Wait...</p>}
-        {error ? <p>{error}</p> :success ? <p style={{color:"green"}}>Success!</p>:""}
         <button type="submit">Sign up</button>
       </form>
+      <div style={{ width: "300px", margin: "0 auto" }}>
+        <button
+          className="bg-red-500 text-white px-4 py-2 rounded"
+          onClick={()=>{googleLogin()}}
+        >
+          <FontAwesomeIcon icon={faGoogle} style={{ padding: "0 1rem" }} />
+          Zaloguj przez Google
+        </button>
+      </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@ import CartIcon from "./CartIcon";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 import Dashboard from "./Dashboard";
+import OauthGoogle from "./OauthGoogle";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/message" element={<PaymentMessage />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" element={<SignIn />} />
+            <Route path="/oauth/google" element={<OauthGoogle  />} />
           </Routes>
         </BrowserRouter>
       </ProductProvider>

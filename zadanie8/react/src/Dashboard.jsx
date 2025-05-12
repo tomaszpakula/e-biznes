@@ -1,20 +1,28 @@
 import React from "react";
 import { useAuthContext } from "./AuthContext";
 
-
 export default function Dashboard() {
-  const { user, loading } = useAuthContext();
+  const { user, loading, logout } = useAuthContext();
   if (loading) return <div>Loading...</div>;
   return (
     <div
       style={{
         padding: "1rem",
         display: "flex",
-        gap: "1rem"
+        gap: "1rem",
       }}
     >
       {user ? (
-        <p>Hello {user}!</p>
+        <>
+          <p>Hello {user}!</p>
+          <button
+            onClick={() => {
+              logout();
+            }}
+          >
+            Sign out
+          </button>
+        </>
       ) : (
         <>
           <a href="/signup" style={{ textDecoration: "None" }}>
