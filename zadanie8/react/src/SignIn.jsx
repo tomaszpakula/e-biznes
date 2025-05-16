@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import useAuth from "./useAuth";
 import { useAuthContext } from "./AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 export default function SignIn() {
   const {
     register,
@@ -18,7 +18,7 @@ export default function SignIn() {
     logInUser({ email, password });
   };
 
-  const { googleLogin } = useAuthContext();
+  const { googleLogin, facebookLogin } = useAuthContext();
 
   return (
     <div
@@ -56,10 +56,21 @@ export default function SignIn() {
       <div style={{ width: "300px", margin: "0 auto" }}>
         <button
           className="bg-red-500 text-white px-4 py-2 rounded"
+          style={{width:"100%"}}
           onClick={()=>{googleLogin()}}
         >
           <FontAwesomeIcon icon={faGoogle} style={{ padding: "0 1rem" }} />
           Zaloguj przez Google
+        </button>
+      </div>
+      <div style={{ width: "300px", margin: "1rem auto" }}>
+        <button
+          className="bg-red-500 text-white px-4 py-2 rounded"
+          style={{width:"100%"}}
+          onClick={()=>{facebookLogin()}}
+        >
+          <FontAwesomeIcon icon={faFacebook} style={{ padding: "0 1rem" }} />
+         Zaloguj przez Facebook
         </button>
       </div>
     </div>

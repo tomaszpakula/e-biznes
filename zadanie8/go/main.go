@@ -42,9 +42,12 @@ func main() {
 	paymentController := &controllers.PaymentController{}
 	authController := &controllers.AuthController{DB: db}
 	googleController := &auth.GoogleController{DB: db}
+	facebookController := &auth.FacebookController{DB: db}
 
 	e.GET("/auth/google/login", googleController.GoogleLogin)
 	e.GET("/auth/google/callback", googleController.GoogleCallback)
+	e.GET("/auth/facebook/login", facebookController.FacebookLogin)
+	e.GET("/auth/facebook/callback", facebookController.FacebookCallback)
 
 	e.GET("/me", authController.GetMe, middlewares.Verify)
 	e.POST("/login", authController.Login)
