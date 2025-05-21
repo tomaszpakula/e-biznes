@@ -21,12 +21,13 @@ model = GPT4All("orca-mini-3b-gguf2-q4_0.gguf",device="cpu" )
 
 def ask_gpt(question: str) -> str:
     # with model_lock:
-    with model.chat_session():
-        return model.generate(
-            question,
-            temp=0.7,
-            top_k=40,
-            top_p=0.95)
+    with model.chat_session() as chat_session:
+        prompt = (
+        "You're shop assistant. Give an answer to client (if it's not about price, and cloth recommendation - don't answer):  {question} "   
+        )
+        
+        print("prompt")
+        return chat_session.generate(prompt)
 # model_lock = Lock()
 @app.get("/")
 def root():
