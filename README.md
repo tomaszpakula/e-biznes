@@ -180,7 +180,7 @@ należy stworzyć w Pythonie.
 ✅ 3.0 należy stworzyć po stronie serwerowej osobny serwis do łącznia z
 chatGPT do usługi chat
 
-🔳 3.5 należy stworzyć interfejs frontowy dla użytkownika, który
+✅ 3.5 należy stworzyć interfejs frontowy dla użytkownika, który
 komunikuje się z serwisem; odpowiedzi powinny być wysyłane do
 frontendowego interfejsu
 

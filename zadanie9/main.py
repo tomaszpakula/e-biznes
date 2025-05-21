@@ -2,8 +2,17 @@ from fastapi import FastAPI
 from gpt4all import GPT4All
 from pydantic import BaseModel
 from threading import Lock
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Question(BaseModel):
     text: str   
@@ -27,6 +36,7 @@ def root():
 def chat(question: Question):
     
     answer = ask_gpt(question.text)
+    print(answer)
     return {
         "reply": answer
     }

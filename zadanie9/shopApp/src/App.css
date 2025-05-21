@@ -1,0 +1,25 @@
+#root {
+  width: 100vw;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  --user-color : rgb(196, 240, 196);
+  --error-color : rgb(195, 125, 125);
+  
+}
+
+.chat-message-user{
+  color: var(--user-color);
+  border-color: var(--user-color);
+  margin-left: auto;
+}
+
+.chat-message-bot-loading{
+  max-width: 2rem;
+}
+
+.chat-message-bot-error{
+  color: var(--error-color);
+  border-color: var(--error-color);
+
+}
