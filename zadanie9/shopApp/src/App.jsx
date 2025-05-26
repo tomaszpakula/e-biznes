@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import ChatHistory from "./ChatHistory";
 import ChatInput from "./ChatInput";
@@ -7,6 +7,23 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+    fetch("http://localhost:8000/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        setMessages((prev) => [...prev, { from: "bot", message: data.reply }]);
+      });
+  }, []);
+
   return (
     <div
       style={{
@@ -21,8 +38,12 @@ function App() {
         alignItems: "center",
       }}
     >
-      <ChatHistory messages={messages} loading={loading} error={error}/>
-      <ChatInput setMessages={setMessages} setLoading={setLoading} setError={setError} />
+      <ChatHistory messages={messages} loading={loading} error={error} />
+      <ChatInput
+        setMessages={setMessages}
+        setLoading={setLoading}
+        setError={setError}
+      />
     </div>
   );
 }

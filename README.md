@@ -184,9 +184,9 @@ chatGPT do usługi chat
 komunikuje się z serwisem; odpowiedzi powinny być wysyłane do
 frontendowego interfejsu
 
-🔳 4.0 stworzyć listę 5 różnych otwarć oraz zamknięć rozmowy
+✅ 4.0 stworzyć listę 5 różnych otwarć oraz zamknięć rozmowy
 
-🔳 4.5 filtrowanie po zagadnieniach związanych ze sklepem (np.
+✅ 4.5 filtrowanie po zagadnieniach związanych ze sklepem (np.
 ograniczenie się jedynie do ubrań oraz samego sklepu) do GPT
 
 🔳 5.0 filtrowanie odpowiedzi po sentymencie
