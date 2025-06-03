@@ -189,4 +189,4 @@ frontendowego interfejsu
 ✅ 4.5 filtrowanie po zagadnieniach związanych ze sklepem (np.
 ograniczenie się jedynie do ubrań oraz samego sklepu) do GPT
 
-🔳 5.0 filtrowanie odpowiedzi po sentymencie
+✅ 5.0 filtrowanie odpowiedzi po sentymencie
