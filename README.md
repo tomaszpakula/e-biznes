@@ -107,7 +107,7 @@ stworzeniu darmowego konta via https://education.github.com/pack.
 
 ✅ 3.5 Należy rozszerzyć testy funkcjonalne, aby zawierały minimum 50 asercji [commit](https://github.com/tomaszpakula/e-biznes/commit/e8d564106b1e62a84e3328b0368829f62a08b321)
 
-🔲 4.0 Należy stworzyć testy jednostkowe do wybranego wcześniejszego
+✅ 4.0 Należy stworzyć testy jednostkowe do wybranego wcześniejszego
 projektu z minimum 50 asercjami
 
 ✅ 4.5 Należy dodać testy API, należy pokryć wszystkie endpointy z
@@ -189,4 +189,4 @@ frontendowego interfejsu
 ✅ 4.5 filtrowanie po zagadnieniach związanych ze sklepem (np.
 ograniczenie się jedynie do ubrań oraz samego sklepu) do GPT
 
-🔳 5.0 filtrowanie odpowiedzi po sentymencie
+✅ 5.0 filtrowanie odpowiedzi po sentymencie
