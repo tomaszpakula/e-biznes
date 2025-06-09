@@ -4,6 +4,8 @@ Zadania z przedmiotu e-biznes
 
 ## **Zadanie 1** Docker
 
+[dockerhub](https://hub.docker.com/r/tomaszpakula/ebiznes01-docker)
+
 ✅ 3.0 obraz ubuntu z Pythonem w wersji 3.10 [commit 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
 
 ✅ 3.5 obraz ubuntu:24.02 z Javą w wersji 8 oraz Kotlinem [commit 1](https://github.com/tomaszpakula/e-biznes/commit/8e7d3b017218db3459e5aa33c2ad5d9719d78071)
