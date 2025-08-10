@@ -145,6 +145,10 @@ aplikacji klienckiej [commit](https://github.com/tomaszpakula/e-biznes-client/co
 
 [katalog](https://github.com/tomaszpakula/e-biznes/tree/main/zadanie7)
 
+[sonar client](https://sonarcloud.io/project/overview?id=tomaszpakula_e-biznes-client)
+
+[sonar_server](https://sonarcloud.io/project/overview?id=tomaszpakula_e-biznes-server)
+
 
 
 ## **Zadanie 8** Oauth2
